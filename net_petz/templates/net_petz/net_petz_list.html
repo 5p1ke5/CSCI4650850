@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    NetPetz
+{% endblock %}
+
+{% block content %}
+    <section>
+    <h1>NetPetz</h1>
+        {% for pet in pets %}
+            <article class="pet">
+                <h2> 
+                    <a href="{% url 'pets:page' slug=pet.slug%}">
+                    {{pet.name}}
+                    </a> 
+                </h2>
+                <p> {{pet.date}} </p>
+            </article>
+        {% endfor %}
+    </section>
+{% endblock %}

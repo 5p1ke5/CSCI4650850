@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{pet.name}}
+{% endblock %}
+
+{% block content %}
+    <section>
+        <h1>{{pet.name}}</h1>
+        <p> {{pet.date}} </p>
+    </section>
+{% endblock %}
