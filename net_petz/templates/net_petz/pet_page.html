@@ -5,8 +5,10 @@
 {% endblock %}
 
 {% block content %}
-    <section>
+    <section  style="text-align:center;">
+		<img src="images/net_pet.png" alt="Net Pet">
         <h1>{{pet.name}}</h1>
         <p> {{pet.date}} </p>
+		<button type="button" onclick="alert('What a delicious meal!')">Feed {{pet.name}}</button>
     </section>
 {% endblock %}
