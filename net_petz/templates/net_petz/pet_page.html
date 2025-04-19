@@ -1,4 +1,5 @@
 {% extends 'layout.html' %}
+{% load static %}
 
 {% block title %}
     {{pet.name}}
@@ -6,9 +7,29 @@
 
 {% block content %}
     <section  style="text-align:center;">
-		<img src="images/net_pet.png" alt="Net Pet">
+		{% if pet.image %}
+            <img src="{{ pet.image.url }}" alt="{{ pet.name }}" width="400"  style="display: block; margin: 0 auto;">
+        {% else %}
+            <img src="{% static 'images/defaultPetImage.jpg' %}" alt="Net Pet" style="display: block; margin: 0 auto;">
+        {% endif %}
         <h1>{{pet.name}}</h1>
-        <p> {{pet.date}} </p>
-		<button type="button" onclick="alert('What a delicious meal!')">Feed {{pet.name}}</button>
+        <p> {{pet.date}} </p>		
+        <form method="post" action="{% url 'pets:feed' pet.slug %}">
+            {% csrf_token %}
+            <button type="submit">Feed {{ pet.name }}</button>
+        </form>
+        <p>{{ pet.name }} has <strong>{{ pet.food }}</strong> food.</p>
+
+        <form method="post" enctype="multipart/form-data" action="{% url 'pets:upload' pet.slug %}" id="image-upload-form">
+            {% csrf_token %}
+            <input type="file" name="image" accept="image/*" id="file-input" style="display: none;" onchange="document.getElementById('image-upload-form').submit();">
+            <button type="button" onclick="document.getElementById('file-input').click();">Update Pet Image</button>
+        </form>
+
+        <form method="post" action="{% url 'pets:rename' pet.slug %}">
+            {% csrf_token %}
+            <input type="text" name="name" value="{{ pet.name }}" required>
+            <button type="submit">Change Pet Name</button>
+        </form>
     </section>
 {% endblock %}
