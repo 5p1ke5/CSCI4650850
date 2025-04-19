@@ -18,6 +18,12 @@
         <a href="/"> Home </a> |
         <a href="/about"> About </a> |
         <a href="{% url 'pets:list' %}"> NetPetz </a> |
+        <a href="{% url 'users:register' %}"> User Registration </a> |
+        <a href="{% url 'users:login' %}"> User Login </a> | 
+        <form class="logout" action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
+            <button class="form-submit">Logout</button>
+        </form>
     </nav>
     <main>
     {% block content %}

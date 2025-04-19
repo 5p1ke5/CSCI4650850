@@ -25,6 +25,7 @@ urlpatterns = [
     path('', views.homepage),
     path('about/', views.about),
     path('netpetz/', include('net_petz.urls')),
+    path('users/', include('users.urls'))
 ]
 
 if settings.DEBUG:
