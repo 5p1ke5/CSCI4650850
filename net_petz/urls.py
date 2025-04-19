@@ -11,6 +11,7 @@ urlpatterns = [
     path('<slug:slug>', views.net_petz_page, name="page"),
     path('<slug:slug>/upload/', views.upload_pet_image, name='upload'),
     path('<slug:slug>/rename/', views.update_pet_name, name='rename'),
+    path('create/', views.create_pet, name='create'),
 ]
 
 if settings.DEBUG:

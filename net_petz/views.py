@@ -39,3 +39,18 @@ def update_pet_name(request, slug):
             pet.save()
             return redirect('pets:page', slug=pet.slug)
     return redirect('pets:page', slug=slug)
+
+
+def create_pet(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        image = request.FILES.get('image')
+
+        if name:
+            pet = Pet(name=name, slug=slugify(name))
+            if image:
+                pet.image = image
+            pet.save()
+            return redirect('pets:page', slug=pet.slug)
+
+    return render(request, 'net_petz/create_pet.html')

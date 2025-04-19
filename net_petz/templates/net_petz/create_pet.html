@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+Create a New Pet
+{% endblock %}
+
+{% block content %}
+<section style="text-align: center;">
+    <h1>Create a New Pet</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Pet name" required><br><br>
+        <input type="file" name="image" accept="image/*"><br><br>
+        <button type="submit">Create Pet</button>
+    </form>
+</section>
+{% endblock %}

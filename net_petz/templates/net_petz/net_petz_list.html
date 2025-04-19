@@ -17,5 +17,6 @@
                 <p> {{pet.date}} </p>
             </article>
         {% endfor %}
+        <a href="{% url 'pets:create' %}">➕ Create New Pet</a>
     </section>
 {% endblock %}
