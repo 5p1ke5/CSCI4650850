@@ -1,12 +1,12 @@
 {% extends 'layout.html' %}
-
+{% load static %}
 {% block title %}
     NetPetz
 {% endblock %}
 
 {% block content %}
     <section>
-    <h1>NetPetz</h1>
+    <img class="netPetsLogoMedium" src="{% static 'images/wordArt.png' %}" alt="Net Pet" style="display: block; margin: 0 auto;">
         {% for pet in pets %}
             <article class="pet">
                 <h2> 

@@ -64,3 +64,30 @@ a:hover {
 .logout-button:hover {
     opacity: .85;
 }
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(
+        90deg,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        indigo,
+        violet
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rainbowShift 5s linear infinite;
+}
+
+@keyframes rainbowShift {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+
+.netPetsLogoMedium{
+    width:300px;
+}
