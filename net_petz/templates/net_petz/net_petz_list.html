@@ -14,7 +14,7 @@
                     {{pet.name}}
                     </a> 
                 </h2>
-                <p> {{pet.date}} </p>
+                <p> {{pet.date}} by {{ pet.author }} </p>
             </article>
         {% endfor %}
         <a href="{% url 'pets:create' %}">➕ Create New Pet</a>
