@@ -91,3 +91,55 @@ h1 {
 .netPetsLogoMedium{
     width:300px;
 }
+
+
+.petImage {
+    border: 4px solid #81dbb8;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(129, 219, 184, 0.5);
+    margin-bottom: 1rem;
+}
+
+section button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.2rem;
+    background-color: #81dbb8;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+section button:hover {
+    background-color: #5db69b;
+}
+
+section input[type="text"] {
+    font-size: 1.25rem;
+    padding: 0.4rem 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+section p strong {
+    color: #ffcc00;
+    font-weight: bold;
+}
+
+.logout-button {
+    font-size: 1.25rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #81dbb8;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    margin-left: 0.5rem;
+    margin-bottom:3px;
+}
+
+.logout-button:hover {
+    background-color: #5db69b;
+}
